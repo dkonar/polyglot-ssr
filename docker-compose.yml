@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    image: cloudscala/scala-graalvm:scala-2.12.6-sbt-1.1.5-graalvm-1.0.0-rc1
+    working_dir: /app/polyglot-ssr-app
+    command: bash ./start.sh
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+      - ~/.ivy2:/root/.ivy2
+      - ~/.sbt:/root/.sbt
+      - ~/.coursier:/root/.coursier
