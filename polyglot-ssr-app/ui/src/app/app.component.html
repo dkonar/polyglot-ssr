@@ -1,4 +1,7 @@
 <div style="text-align:center">
   <h1>{{ title }}!</h1>
+  <li *ngFor="let thing of things">
+    <app-thing [thing]="thing"></app-thing>
+  </li>
 </div>
 <router-outlet></router-outlet>

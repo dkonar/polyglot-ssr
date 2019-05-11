@@ -10,20 +10,18 @@ enableProdMode();
 import { renderModuleFactory } from '@angular/platform-server';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
 const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
 
-export function render() {
-  renderModuleFactory(AppServerModuleNgFactory, {
+export = function render() {
+  return renderModuleFactory(AppServerModuleNgFactory, {
     document: template,
     url: "/",
     extraProviders: [
       provideModuleMap(LAZY_MODULE_MAP)
     ],
-  }).then(html => {
-    return html;
-  });
+  })
 }

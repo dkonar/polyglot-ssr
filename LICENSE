@@ -1,19 +1,6 @@
-# polyglot-ssr
-Polyglot SSR with GraalVM, Play framework, and Angular
-
-## GraalVM/Scala docker image
-
-Scala: 2.12.6
-SBT: 1.1.5
-GraalVM: 1.0.0-RC16
-
-Based on https://github.com/CloudScala/scala-graalvm-docker
-
-## License
-
 MIT License
 
-Copyright (c) 2019 Daniel Konar
+Copyright (c) 2018 Vitor S. Vieira
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
